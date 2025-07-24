@@ -1,102 +1,123 @@
-import Image from "next/image";
+import { ShieldCheck, ClipboardCheck, BrainCircuit, Zap, UserCircle, LogIn } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen flex flex-col bg-background text-foreground font-sans">
+      {/* Header */}
+      <header className="flex items-center justify-between px-6 py-4 max-w-6xl mx-auto w-full">
+        <div className="flex items-center gap-2">
+          <ShieldCheck className="w-8 h-8 text-primary" />
+          <span className="text-xl font-bold tracking-tight">PhishShield</span>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+        <ThemeToggle />
+      </header>
+
+      {/* Hero Section */}
+      <section className="flex flex-col items-center justify-center text-center py-16 px-4 gap-6">
+        <ShieldCheck className="w-16 h-16 text-primary mb-4" />
+        <h1 className="text-4xl sm:text-5xl font-extrabold mb-2">Defend Against Phishing in Seconds</h1>
+        <p className="text-lg text-muted-foreground max-w-xl mb-6">
+          Instantly analyze suspicious links with AI. Stay safe online with real-time verdicts and history tracking.
+        </p>
+        <Button asChild size="lg" className="px-8 text-base font-semibold">
+          <a href="/dashboard">Get Started</a>
+        </Button>
+      </section>
+
+      {/* How it Works */}
+      <section className="max-w-4xl mx-auto py-12 px-4">
+        <h2 className="text-2xl font-bold text-center mb-8">How it Works</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <Card className="transition-transform hover:scale-[1.03] hover:shadow-lg border-muted-foreground/10 hover:border-primary/40 focus-within:shadow-lg">
+            <CardHeader className="flex flex-col items-center gap-2 pb-0">
+              <ClipboardCheck className="w-10 h-10 text-primary mb-2" />
+              <CardTitle className="text-center">1. Paste the suspicious link</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription className="text-center">Copy and paste any link you think might be a phishing attempt.</CardDescription>
+            </CardContent>
+          </Card>
+          <Card className="transition-transform hover:scale-[1.03] hover:shadow-lg border-muted-foreground/10 hover:border-primary/40 focus-within:shadow-lg">
+            <CardHeader className="flex flex-col items-center gap-2 pb-0">
+              <BrainCircuit className="w-10 h-10 text-primary mb-2" />
+              <CardTitle className="text-center">2. Let our AI analyze it</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription className="text-center">Our advanced AI scans the link for phishing indicators in real time.</CardDescription>
+            </CardContent>
+          </Card>
+          <Card className="transition-transform hover:scale-[1.03] hover:shadow-lg border-muted-foreground/10 hover:border-primary/40 focus-within:shadow-lg">
+            <CardHeader className="flex flex-col items-center gap-2 pb-0">
+              <Zap className="w-10 h-10 text-primary mb-2" />
+              <CardTitle className="text-center">3. Instantly get the verdict</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription className="text-center">Receive a clear verdict and stay protected from scams.</CardDescription>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="max-w-6xl mx-auto py-12 px-4">
+        <h2 className="text-2xl font-bold text-center mb-8">Features</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          <Card className="transition-transform hover:scale-[1.03] hover:shadow-lg border-muted-foreground/10 hover:border-primary/40 focus-within:shadow-lg">
+            <CardHeader className="flex flex-col items-center gap-2 pb-0">
+              <BrainCircuit className="w-10 h-10 text-primary mb-2" />
+              <CardTitle className="text-center">AI-Powered Detection</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription className="text-center">Cutting-edge AI for accurate phishing detection.</CardDescription>
+            </CardContent>
+          </Card>
+          <Card className="transition-transform hover:scale-[1.03] hover:shadow-lg border-muted-foreground/10 hover:border-primary/40 focus-within:shadow-lg">
+            <CardHeader className="flex flex-col items-center gap-2 pb-0">
+              <LogIn className="w-10 h-10 text-primary mb-2" />
+              <CardTitle className="text-center">Google Login</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription className="text-center">Sign in securely with your Google account.</CardDescription>
+            </CardContent>
+          </Card>
+          <Card className="transition-transform hover:scale-[1.03] hover:shadow-lg border-muted-foreground/10 hover:border-primary/40 focus-within:shadow-lg">
+            <CardHeader className="flex flex-col items-center gap-2 pb-0">
+              <Zap className="w-10 h-10 text-primary mb-2" />
+              <CardTitle className="text-center">Realtime Results</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription className="text-center">Get instant feedback on every link you check.</CardDescription>
+            </CardContent>
+          </Card>
+          <Card className="transition-transform hover:scale-[1.03] hover:shadow-lg border-muted-foreground/10 hover:border-primary/40 focus-within:shadow-lg">
+            <CardHeader className="flex flex-col items-center gap-2 pb-0">
+              <UserCircle className="w-10 h-10 text-primary mb-2" />
+              <CardTitle className="text-center">User History</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription className="text-center">View your past analyses and verdicts anytime.</CardDescription>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="flex flex-col items-center justify-center text-center py-16 px-4 gap-6 bg-muted">
+        <h2 className="text-3xl font-bold mb-2">Ready to protect yourself?</h2>
+        <p className="text-lg text-muted-foreground max-w-xl mb-6">
+          Start using PhishShield for free and experience AI-powered phishing protection.
+        </p>
+        <Button asChild size="lg" className="px-8 text-base font-semibold">
+          <a href="/dashboard">Get Started</a>
+        </Button>
+      </section>
+
+      {/* Footer */}
+      <footer className="flex flex-col items-center justify-center py-6 border-t mt-auto text-sm text-muted-foreground">
+        <span>PhishShield &copy; {new Date().getFullYear()}</span>
       </footer>
     </div>
   );
