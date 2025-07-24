@@ -24,7 +24,7 @@ export default function Home() {
           Instantly analyze suspicious links with AI. Stay safe online with real-time verdicts and history tracking.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button asChild variant="default" size="lg" className="px-8 text-base font-semibold flex items-center gap-2 bg-gradient-to-r from-primary to-green-600 text-primary-foreground hover:from-primary/90 hover:to-green-500">
+          <Button asChild variant="default" size="lg" className="px-8 text-base font-semibold flex items-center gap-2 shadow-lg shadow-green-500/30 hover:shadow-green-500/60 focus:shadow-green-500/60">
             <Link href="/scan">
               <ShieldCheck className="w-5 h-5" />
               Check a Link for Phishing
@@ -35,11 +35,14 @@ export default function Home() {
 
       {/* How it Works */}
       <section className="max-w-4xl mx-auto py-12 px-4">
-        <h2 className="text-2xl font-bold text-center mb-8">How it Works</h2>
+        <h2 className="text-2xl font-bold text-center mb-8 flex items-center justify-center">
+          <span className="inline-block w-2 h-8 rounded bg-green-500 dark:bg-green-700 mr-3"></span>
+          How it Works
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <Card className="transition-transform hover:scale-[1.03] hover:shadow-lg border-muted-foreground/10 hover:border-primary/40 focus-within:shadow-lg">
             <CardHeader className="flex flex-col items-center gap-2 pb-0">
-              <ClipboardCheck className="w-10 h-10 text-primary mb-2" />
+              <ClipboardCheck className="w-10 h-10 text-green-500 dark:text-green-400 mb-2" />
               <CardTitle className="text-center">1. Paste the suspicious link</CardTitle>
             </CardHeader>
             <CardContent>
@@ -48,7 +51,7 @@ export default function Home() {
           </Card>
           <Card className="transition-transform hover:scale-[1.03] hover:shadow-lg border-muted-foreground/10 hover:border-primary/40 focus-within:shadow-lg">
             <CardHeader className="flex flex-col items-center gap-2 pb-0">
-              <BrainCircuit className="w-10 h-10 text-primary mb-2" />
+              <BrainCircuit className="w-10 h-10 text-blue-500 dark:text-blue-400 mb-2" />
               <CardTitle className="text-center">2. Let our AI analyze it</CardTitle>
             </CardHeader>
             <CardContent>
@@ -57,7 +60,7 @@ export default function Home() {
           </Card>
           <Card className="transition-transform hover:scale-[1.03] hover:shadow-lg border-muted-foreground/10 hover:border-primary/40 focus-within:shadow-lg">
             <CardHeader className="flex flex-col items-center gap-2 pb-0">
-              <Zap className="w-10 h-10 text-primary mb-2" />
+              <Zap className="w-10 h-10 text-purple-500 dark:text-purple-400 mb-2" />
               <CardTitle className="text-center">3. Instantly get the verdict</CardTitle>
             </CardHeader>
             <CardContent>
@@ -69,11 +72,14 @@ export default function Home() {
 
       {/* Features */}
       <section className="max-w-6xl mx-auto py-12 px-4">
-        <h2 className="text-2xl font-bold text-center mb-8">Features</h2>
+        <h2 className="text-2xl font-bold text-center mb-8 flex items-center justify-center">
+          <span className="inline-block w-2 h-8 rounded bg-purple-500 dark:bg-purple-700 mr-3"></span>
+          Features
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           <Card className="transition-transform hover:scale-[1.03] hover:shadow-lg border-muted-foreground/10 hover:border-primary/40 focus-within:shadow-lg">
             <CardHeader className="flex flex-col items-center gap-2 pb-0">
-              <BrainCircuit className="w-10 h-10 text-primary mb-2" />
+              <BrainCircuit className="w-10 h-10 text-purple-500 dark:text-purple-400 mb-2" />
               <CardTitle className="text-center">AI-Powered Detection</CardTitle>
             </CardHeader>
             <CardContent>
@@ -82,7 +88,7 @@ export default function Home() {
           </Card>
           <Card className="transition-transform hover:scale-[1.03] hover:shadow-lg border-muted-foreground/10 hover:border-primary/40 focus-within:shadow-lg">
             <CardHeader className="flex flex-col items-center gap-2 pb-0">
-              <LogIn className="w-10 h-10 text-primary mb-2" />
+              <LogIn className="w-10 h-10 text-pink-500 dark:text-pink-400 mb-2" />
               <CardTitle className="text-center">Google Login</CardTitle>
             </CardHeader>
             <CardContent>
@@ -91,7 +97,7 @@ export default function Home() {
           </Card>
           <Card className="transition-transform hover:scale-[1.03] hover:shadow-lg border-muted-foreground/10 hover:border-primary/40 focus-within:shadow-lg">
             <CardHeader className="flex flex-col items-center gap-2 pb-0">
-              <Zap className="w-10 h-10 text-primary mb-2" />
+              <Zap className="w-10 h-10 text-red-500 dark:text-red-400 mb-2" />
               <CardTitle className="text-center">Realtime Results</CardTitle>
             </CardHeader>
             <CardContent>
@@ -100,7 +106,7 @@ export default function Home() {
           </Card>
           <Card className="transition-transform hover:scale-[1.03] hover:shadow-lg border-muted-foreground/10 hover:border-primary/40 focus-within:shadow-lg">
             <CardHeader className="flex flex-col items-center gap-2 pb-0">
-              <UserCircle className="w-10 h-10 text-primary mb-2" />
+              <UserCircle className="w-10 h-10 text-yellow-500 dark:text-yellow-400 mb-2" />
               <CardTitle className="text-center">User History</CardTitle>
             </CardHeader>
             <CardContent>
