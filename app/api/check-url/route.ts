@@ -51,7 +51,8 @@ export async function POST(req: NextRequest) {
     }
     const verdict = await askOpenRouter(url);
     return NextResponse.json(verdict);
-  } catch (e: any) {
-    return NextResponse.json({ safe: false, reason: e.message || "Server error. Please try again." }, { status: 500 });
+  } catch (e: unknown) {
+    const message = e instanceof Error ? e.message : "Server error. Please try again.";
+    return NextResponse.json({ safe: false, reason: message }, { status: 500 });
   }
 } 

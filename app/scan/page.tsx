@@ -42,7 +42,7 @@ export default function ScanPage() {
       if (!res.ok) throw new Error("API error")
       const data = await res.json()
       setResult({ safe: data.safe, reason: data.reason })
-    } catch (err: any) {
+    } catch {
       setError("Failed to scan the link. Please try again.")
     } finally {
       setLoading(false)
@@ -67,7 +67,7 @@ export default function ScanPage() {
           <CardHeader className="text-center flex flex-col items-center gap-2 pb-0 relative mt-[-16px]">
             <ShieldX className="mx-auto mb-2 w-10 h-10 text-primary" />
             <CardTitle>Scan a suspicious link</CardTitle>
-            <CardDescription>Paste a URL below to check if it's safe.</CardDescription>
+            <CardDescription>Paste a URL below to check if it&apos;s safe.</CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleScan} className="flex flex-col gap-4">

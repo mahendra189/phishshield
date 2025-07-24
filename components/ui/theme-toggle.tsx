@@ -6,10 +6,14 @@ export function ThemeToggle() {
   const [theme, setTheme] = React.useState<"light" | "dark">(() =>
     typeof window !== "undefined" && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
   )
+  const [mounted, setMounted] = React.useState(false)
 
   React.useEffect(() => {
+    setMounted(true)
     document.documentElement.classList.toggle("dark", theme === "dark")
   }, [theme])
+
+  if (!mounted) return null
 
   return (
     <button
