@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input"
 import { AlertCircle, CheckCircle, Loader2, ShieldX } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ThemeToggle } from "@/components/ui/theme-toggle";
+import Link from "next/link";
 
 export default function ScanPage() {
   const [url, setUrl] = React.useState("")
@@ -57,10 +58,13 @@ export default function ScanPage() {
         className="w-full max-w-md"
       >
         <Card className="shadow-lg border-muted-foreground/10 bg-card text-card-foreground">
-          <CardHeader className="text-center flex flex-col items-center gap-2 pb-0 relative">
-            <div className="absolute right-2 top-2">
-              <ThemeToggle />
-            </div>
+          <div className="flex justify-between items-center px-6 pt-4">
+            <Button asChild variant="ghost" size="sm" className="px-3">
+              <Link href="/">← Back to Home</Link>
+            </Button>
+            <ThemeToggle />
+          </div>
+          <CardHeader className="text-center flex flex-col items-center gap-2 pb-0 relative mt-[-16px]">
             <ShieldX className="mx-auto mb-2 w-10 h-10 text-primary" />
             <CardTitle>Scan a suspicious link</CardTitle>
             <CardDescription>Paste a URL below to check if it's safe.</CardDescription>

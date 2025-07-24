@@ -2,6 +2,7 @@ import { ShieldCheck, ClipboardCheck, BrainCircuit, Zap, UserCircle, LogIn } fro
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -22,9 +23,14 @@ export default function Home() {
         <p className="text-lg text-muted-foreground max-w-xl mb-6">
           Instantly analyze suspicious links with AI. Stay safe online with real-time verdicts and history tracking.
         </p>
-        <Button asChild size="lg" className="px-8 text-base font-semibold">
-          <a href="/dashboard">Get Started</a>
-        </Button>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button asChild variant="default" size="lg" className="px-8 text-base font-semibold flex items-center gap-2 bg-gradient-to-r from-primary to-green-600 text-primary-foreground hover:from-primary/90 hover:to-green-500">
+            <Link href="/scan">
+              <ShieldCheck className="w-5 h-5" />
+              Check a Link for Phishing
+            </Link>
+          </Button>
+        </div>
       </section>
 
       {/* How it Works */}
@@ -110,9 +116,11 @@ export default function Home() {
         <p className="text-lg text-muted-foreground max-w-xl mb-6">
           Start using PhishShield for free and experience AI-powered phishing protection.
         </p>
-        <Button asChild size="lg" className="px-8 text-base font-semibold">
-          <a href="/dashboard">Get Started</a>
-        </Button>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button asChild variant="outline" size="lg" className="px-8 text-base font-semibold">
+            <Link href="/scan">Scan a Link</Link>
+          </Button>
+        </div>
       </section>
 
       {/* Footer */}
