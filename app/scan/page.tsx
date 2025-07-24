@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { AlertCircle, CheckCircle, Loader2, ShieldX } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 export default function ScanPage() {
   const [url, setUrl] = React.useState("")
@@ -55,8 +56,11 @@ export default function ScanPage() {
         transition={{ duration: 0.4 }}
         className="w-full max-w-md"
       >
-        <Card className="shadow-lg border-muted-foreground/10">
-          <CardHeader className="text-center">
+        <Card className="shadow-lg border-muted-foreground/10 bg-card text-card-foreground">
+          <CardHeader className="text-center flex flex-col items-center gap-2 pb-0 relative">
+            <div className="absolute right-2 top-2">
+              <ThemeToggle />
+            </div>
             <ShieldX className="mx-auto mb-2 w-10 h-10 text-primary" />
             <CardTitle>Scan a suspicious link</CardTitle>
             <CardDescription>Paste a URL below to check if it's safe.</CardDescription>
@@ -111,7 +115,7 @@ export default function ScanPage() {
                   exit={{ opacity: 0, y: 8 }}
                   className="mt-6"
                 >
-                  <Card className={`border-2 ${result.safe ? "border-green-500 bg-green-500/10" : "border-red-500 bg-red-500/10"} transition-colors`}> 
+                  <Card className={`border-2 bg-card text-card-foreground ${result.safe ? "border-green-500 dark:border-green-400 bg-green-500/10 dark:bg-green-400/10" : "border-red-500 dark:border-red-400 bg-red-500/10 dark:bg-red-400/10"} transition-colors`}> 
                     <CardHeader className="flex flex-col items-center gap-2 pb-0">
                       {result.safe ? (
                         <CheckCircle className="w-8 h-8 text-green-600 dark:text-green-400" />
