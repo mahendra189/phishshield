@@ -76,7 +76,7 @@ export default function Home() {
           <span className="inline-block w-2 h-8 rounded bg-purple-500 dark:bg-purple-700 mr-3"></span>
           Features
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-center place-items-center">
           <Card className="transition-transform hover:scale-[1.03] hover:shadow-lg border-muted-foreground/10 hover:border-primary/40 focus-within:shadow-lg">
             <CardHeader className="flex flex-col items-center gap-2 pb-0">
               <BrainCircuit className="w-10 h-10 text-purple-500 dark:text-purple-400 mb-2" />
@@ -88,29 +88,11 @@ export default function Home() {
           </Card>
           <Card className="transition-transform hover:scale-[1.03] hover:shadow-lg border-muted-foreground/10 hover:border-primary/40 focus-within:shadow-lg">
             <CardHeader className="flex flex-col items-center gap-2 pb-0">
-              <LogIn className="w-10 h-10 text-pink-500 dark:text-pink-400 mb-2" />
-              <CardTitle className="text-center">Google Login</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription className="text-center">Sign in securely with your Google account.</CardDescription>
-            </CardContent>
-          </Card>
-          <Card className="transition-transform hover:scale-[1.03] hover:shadow-lg border-muted-foreground/10 hover:border-primary/40 focus-within:shadow-lg">
-            <CardHeader className="flex flex-col items-center gap-2 pb-0">
               <Zap className="w-10 h-10 text-red-500 dark:text-red-400 mb-2" />
               <CardTitle className="text-center">Realtime Results</CardTitle>
             </CardHeader>
             <CardContent>
               <CardDescription className="text-center">Get instant feedback on every link you check.</CardDescription>
-            </CardContent>
-          </Card>
-          <Card className="transition-transform hover:scale-[1.03] hover:shadow-lg border-muted-foreground/10 hover:border-primary/40 focus-within:shadow-lg">
-            <CardHeader className="flex flex-col items-center gap-2 pb-0">
-              <UserCircle className="w-10 h-10 text-yellow-500 dark:text-yellow-400 mb-2" />
-              <CardTitle className="text-center">User History</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription className="text-center">View your past analyses and verdicts anytime.</CardDescription>
             </CardContent>
           </Card>
         </div>
