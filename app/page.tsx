@@ -1,4 +1,4 @@
-import { ShieldCheck, ClipboardCheck, BrainCircuit, Zap, UserCircle, LogIn } from "lucide-react";
+import { ShieldCheck, ClipboardCheck, BrainCircuit, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
